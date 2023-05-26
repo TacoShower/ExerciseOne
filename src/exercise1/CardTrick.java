@@ -22,6 +22,16 @@ public class CardTrick {
             hand[i].setSuit(Card.SUITS[(int)(Math.random() * 3) + 1]);
         }
         
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter card value (1-13): ");
+        int value = input.nextInt();
+        System.out.print("Enter card suit (1=H 2=D 3=S 4=C: ");
+        int suit = input.nextInt();
+        
+        for (Card c : hand) {
+            if (c.getValue() == value && c.getSuit().equals(Card.SUITS[suit-1])) printInfo();
+        }
+        
         // insert code to ask the user for Card value and suit, create their card
         // and search the hand here. 
         // Hint: You can ask for values 1 to 10, and then
